@@ -33,6 +33,13 @@ body {
   padding: 0;
   color: #282932; 
   background: #f6f4ec;
+
+  font-feature-settings: "kern", "liga";
+  -moz-font-feature-settings: "kern", "liga";
+  -moz-font-feature-settings: "kern=1", "liga=1";
+  -ms-font-feature-settings: "kern", "liga";
+  -o-font-feature-settings: "kern", "liga";
+  -webkit-font-feature-settings: "kern", "liga";
 }
 
 p { 
@@ -77,7 +84,7 @@ li {
 
 a:link { 
   text-decoration: none;
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
 }
 a:visited { 
   text-decoration: none; 
@@ -101,6 +108,12 @@ abbr {
 header {
   padding: 10em 4%;
   text-align: center;
+
+  animation: fadein 3s;
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -moz-animation: fadein 3s; /* Firefox */
+  -ms-animation: fadein 3s; /* Internet Explorer */
+  -o-animation: fadein 3s; /* Opera */
 }
 
 header h1 { 
@@ -459,31 +472,73 @@ aside {
 
 @media (min-width: 47em) {
   .benefits {
+    position: absolute;
+    float: left;
+    background: none;
+    max-width: 7.5rem;
+    text-align: right;
+    margin-top: 12em;
+    left: 50%;
+    margin-left: -25.5rem;
   }
 
-.benefits h3 {
+  .benefits h3 {
+    font-size: 1em;
+    margin: 0;
+    font-family: 'Alegreya Sans SC', 'Alegreya Sans', Verdana, Tahoma, sans-serif;
+    font-style: normal;
   }
 
-.benefits p {
+  .benefits p {
+    font-size: .75em;
+    line-height: 1.4;
   }
 }
 
 @media (min-width: 54em) {
   .benefits {
+    max-width: 8rem;
+    margin-top: 12.5em;
+    margin-left: -28rem;
   }
 }
 
 @media (min-width: 64.125em) {
   .benefits {
+    max-width: 9.4rem;
+    margin-top: 13.1em;
+    margin-left: -34rem;
   }
 
   aside {
+    position: absolute;
+    top: -26.5em;
+    transition: all 0.4s ease;
+
+    animation: fadein 3s;
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -moz-animation: fadein 3s; /* Firefox */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera */
   }
 
   aside:hover {
+    top: -1em;
   }
 
   aside:after {
+    position: absolute;
+    content: "+";
+    text-align: center;
+    background: #1b1b21;
+    color: #f6f4ec;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    bottom: -0.65em;
+    left: 50%;
+    margin-left: -15px;
   }
 
   aside {
@@ -492,35 +547,73 @@ aside {
 
 @media (min-width: 94em) {
   body {
+    font-size: 1.375em;
   }
 
   .summary p {
+    max-width: 49rem;
   }
 
   .benefits {
+    max-width: 12.5rem;
+    margin-left: -41rem;
   }
 
   .explanation h3, .explanation p, .participation h3, .participation p {
+    width: 34rem;
   }
 }
 
 @media (min-width: 120em) {
   body {
+    font-size: 1.5em;
   }
 
   .summary p {
+    max-width: 51rem;
   }
 
   .preamble h3, .preamble p, .requirements h3, .requirements p {
+    max-width: 37.5rem;
   }
 
   .explanation h3, .explanation p, .participation h3, .participation p {
+    width: 37.5rem;
   }
 
   .benefits {
+    margin-left: -49rem;
   }
 }
 
 /* Animations */
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
